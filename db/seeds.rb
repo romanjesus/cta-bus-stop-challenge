@@ -25,7 +25,7 @@ csv.each do |row|
   Route.create!(row.to_hash)
 end
 
-route_mapping_path = Rails.root.to_s + "/db/csv_data/cta_but_route_mapping_oct12.csv"
+route_mapping_path = Rails.root.to_s + "/db/csv_data/cta_bus_route_mapping_oct12.csv"
 
 csv_text = File.read(route_mapping_path)
 csv = CSV.parse(csv_text, :headers => true)
