@@ -1,1 +1,17 @@
 <h1>Welcome to the CTA Bus Route Analyzer - October 2012 Edition! </h1>
+
+<div >
+  <h1>Quick Metrics</h1>
+  <p>Longest route: <%= @longest_route.name %></p>
+  <p>Stop with the most routes: <%= @stop_w_most_routes.clean_name %></p>
+</div>
+
+<div>
+  <h1>Top ten stops by boardings</h1>
+<%= column_chart @stops_by_boardings %>
+</div>
+
+<div>
+  <h1>Top ten stops by alightings</h1>
+<%= column_chart @stops_by_alightings %>
+</div>

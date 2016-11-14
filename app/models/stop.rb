@@ -7,7 +7,7 @@ class Stop < ActiveRecord::Base
   end
 
   def clean_name
-    "#{self.on_street} & #{self.cross_street}"
+    "#{self.id }: #{self.on_street}"
   end
 
   def self.top_ten_by_boardings
