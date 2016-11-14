@@ -33,6 +33,31 @@
       </ul>
     </nav>
 
+    <h1 class="text-center">Please pick a route or bus stop: </h1>
+
+      <div class="container">
+
+       <div class="btn-group">
+         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+           Choose A Route <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu" role="menu">
+           <% @routes.each do |route| %>
+           <li><a href= <%= "routes/#{route.id}" %> ><%= "#{route.name}" %></a></li>
+           <% end %>
+         </ul>
+       </div>
+
+        <%= link_to "Longest Route", "/routes/#{@longest_route.id}", :class => "btn btn-primary" %>
+
+        <%= link_to "Stop With Most Routes", "/stops/#{@stop_w_most_routes.id}", :class => "btn btn-primary" %>
+
+        <%= link_to "Top Ten Stops by Boardings", "/stops/stats/top_ten_by_boardings", :class => "btn btn-primary" %>
+
+        <%= link_to "Top Ten Stops by Alightings", "/stops/stats/top_ten_by_alightings", :class => "btn btn-primary" %>
+    </div>
+
+
 
     <div class="container">
       <%= yield %>
