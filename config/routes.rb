@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
 
   get 'stops/:id' => 'stops#show'
+
+  get 'stops/stats/top_ten_by_boardings' => 'stops#top_ten_by_boardings'
+  get 'stops/stats/top_ten_by_alightings' => 'stops#top_ten_by_alightings'
+
+  get 'routes/:id' => 'routes#show'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

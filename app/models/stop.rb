@@ -10,6 +10,10 @@ class Stop < ActiveRecord::Base
     "#{self.id }: #{self.on_street}"
   end
 
+  def full_name
+    "#{self.id }: #{self.on_street} & #{self.cross_street}"
+  end
+
   def self.top_ten_by_boardings
     stops_by_boardings = {}
 

@@ -1,30 +1,23 @@
-<h1>Welcome! Please pick a route or bus stop: </h1>
-
+<h1 class="text-center">Please pick a route or bus stop: </h1>
 
   <div class="container">
-      <button type="button" class="btn btn-primary">Longest Route</button>
-      <button type="button" class="btn btn-primary">Stop With Most Routes</button>
 
-  </div>
+   <div class="btn-group">
+     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+       Choose A Route <span class="caret"></span>
+     </button>
+     <ul class="dropdown-menu" role="menu">
+       <% @routes.each do |route| %>
+       <li><a href= <%= "routes/#{route.id}" %> ><%= "#{route.name}" %></a></li>
+       <% end %>
+     </ul>
+   </div>
 
-<div >
-  <h1>Quick Metrics</h1>
-  <p>Longest route: <%= @longest_route.name %></p>
-  <p>Stop with the most routes: <%= @stop_w_most_routes.clean_name %></p>
-</div>
+    <%= link_to "Longest Route", "/routes/#{@longest_route.id}", :class => "btn btn-primary" %>
 
-<div>
-  <h1>Top ten stops by boardings</h1>
-<%= column_chart @stops_by_boardings %>
-</div>
+    <%= link_to "Stop With Most Routes", "/stops/#{@stop_w_most_routes.id}", :class => "btn btn-primary" %>
 
-<div>
-  <h1>Top ten stops by alightings</h1>
-<%= column_chart @stops_by_alightings %>
-</div>
+    <%= link_to "Top Ten Stops by Boardings", "/stops/stats/top_ten_by_boardings", :class => "btn btn-primary" %>
 
-
-<div>
-  <h1>This is what an individual stop will look like:</h1>
-  <%= column_chart @stats, width: "800px", height: "500px" %>
+    <%= link_to "Top Ten Stops by Alightings", "/stops/stats/top_ten_by_alightings", :class => "btn btn-primary" %>
 </div>
