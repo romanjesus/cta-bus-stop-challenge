@@ -1,1 +1,30 @@
-<h1>Welcome to the CTA Bus Route Analyzer - October 2012 Edition! </h1>
+<h1>Welcome! Please pick a route or bus stop: </h1>
+
+
+  <div class="container">
+      <button type="button" class="btn btn-primary">Longest Route</button>
+      <button type="button" class="btn btn-primary">Stop With Most Routes</button>
+
+  </div>
+
+<div >
+  <h1>Quick Metrics</h1>
+  <p>Longest route: <%= @longest_route.name %></p>
+  <p>Stop with the most routes: <%= @stop_w_most_routes.clean_name %></p>
+</div>
+
+<div>
+  <h1>Top ten stops by boardings</h1>
+<%= column_chart @stops_by_boardings %>
+</div>
+
+<div>
+  <h1>Top ten stops by alightings</h1>
+<%= column_chart @stops_by_alightings %>
+</div>
+
+
+<div>
+  <h1>This is what an individual stop will look like:</h1>
+  <%= column_chart @stats, width: "800px", height: "500px" %>
+</div>
