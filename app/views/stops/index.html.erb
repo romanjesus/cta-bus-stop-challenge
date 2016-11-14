@@ -2,11 +2,9 @@
 
 
   <div class="container">
-    <%= link_to "Longest Route", "../routes/#{@longest_route.id}", :class => "btn btn-primary" %>
+    <%= link_to "Longest Route", "/routes/#{@longest_route.id}", :class => "btn btn-primary" %>
 
-
-      <button type="button" class="btn btn-primary">Stop With Most Routes</button>
-
+    <%= link_to "Stop With Most Routes", "/stops/#{@stop_w_most_routes.id}", :class => "btn btn-primary" %>
   </div>
 
 <div >
