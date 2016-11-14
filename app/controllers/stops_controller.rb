@@ -11,6 +11,7 @@ class StopsController < ApplicationController
 
     @stats = Stop.stop_stats(14011)
 
+    @routes = Route.all
   end
 
   def show

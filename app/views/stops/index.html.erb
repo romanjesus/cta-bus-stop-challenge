@@ -12,3 +12,15 @@
   <p>Longest route: <%= @longest_route.name %></p>
   <p>Stop with the most routes: <%= @stop_w_most_routes.clean_name %></p>
 </div>
+
+
+<div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Choose A Route <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% @routes.each do |route| %>
+          <li><%= link_to "#{route.name}", "routes/#{route.id}",{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <% end %>
+      </ul>
+</div>
