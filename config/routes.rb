@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
   get 'stops/:id' => 'stops#show'
+  get 'routes/:id' => 'routes#show'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

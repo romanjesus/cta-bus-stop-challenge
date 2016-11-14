@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h1 class="text-center"> Route <%= @route.route_number %>: <%= @route.name %></h1>
+  <h3 class="text-center"><%= "Total stops: #{@route.num_of_stops}" %></h3>
+
+
+  <h3> Stops </h3>
+  <ul>
+    <% @route.stops.each do |stop| %>
+      <li>  <%= link_to "#{stop.full_name}", "../stops/#{stop.id}" %></li>
+    <% end %>
+  </ul>
+
+</div>
