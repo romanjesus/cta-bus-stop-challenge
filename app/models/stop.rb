@@ -29,4 +29,16 @@ class Stop < ActiveRecord::Base
 
     stops_by_alightings
   end
+
+  def self.stop_stats(id)
+    stop = Stop.find(id)
+
+    stats = {}
+
+    stats["Boardings"] = stop.boardings
+    stats["Alightings"] = stop.alightings
+
+    stats
+
+  end
 end

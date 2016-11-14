@@ -9,6 +9,8 @@ class StopsController < ApplicationController
 
     @stop_w_most_routes = Routemapper.stop_w_most_routes
 
+    @stats = Stop.stop_stats(14011)
+
   end
 
 end
