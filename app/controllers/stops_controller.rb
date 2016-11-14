@@ -1,9 +1,9 @@
 class StopsController < ApplicationController
 
   def index
+    @routes = Route.all
     @longest_route = Routemapper.longest_route
     @stop_w_most_routes = Routemapper.stop_w_most_routes
-    @routes = Route.all
   end
 
   def show
