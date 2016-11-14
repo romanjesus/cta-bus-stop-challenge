@@ -8,7 +8,7 @@
      </button>
      <ul class="dropdown-menu" role="menu">
        <% @routes.each do |route| %>
-       <li><a href= <%= "routes/#{route.id}" %> ><%= "#{route.name}" %></a></li>
+       <li><a href= <%= "routes/#{route.id}" %> ><%= "#{route.route_number}: #{route.name}" %></a></li>
        <% end %>
      </ul>
    </div>
