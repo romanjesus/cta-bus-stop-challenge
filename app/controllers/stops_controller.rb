@@ -13,4 +13,10 @@ class StopsController < ApplicationController
 
   end
 
+  def show
+    @stop = Stop.find(params[:id])
+    @stats = Stop.stop_stats(params[:id])
+    render 'show'
+  end
+
 end
