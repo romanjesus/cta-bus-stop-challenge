@@ -11,10 +11,22 @@ class Stop < ActiveRecord::Base
   end
 
   def self.top_ten_by_boardings
-    self.order("boardings DESC").limit(10)
+    stops_by_boardings = {}
+
+    self.order("boardings DESC").limit(10).each do |stop|
+      stops_by_boardings[stop.clean_name] = stop.boardings
+    end
+
+    stops_by_boardings
   end
 
   def self.top_ten_by_alightings
-    self.order("alightings DESC").limit(10)
+    stops_by_alightings = {}
+
+    self.order("alightings DESC").limit(10).each do |stop|
+      stops_by_alightings[stop.clean_name] = stop.alightings
+    end
+
+    stops_by_alightings
   end
 end
