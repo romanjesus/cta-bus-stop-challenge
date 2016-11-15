@@ -21,3 +21,39 @@
 
     <%= link_to "Top Ten Stops by Alightings", "/stops/stats/top_ten_by_alightings", :class => "btn btn-primary" %>
 </div>
+
+
+<div class="container">
+
+  <h3 class="text-center">Stops</h3>
+
+  <table id ="all_stops">
+    <thead>
+      <tr>
+        <th>Stop ID</th>
+        <th>On Street</th>
+        <th>Cross Street</th>
+        <th>Routes List</th>
+        <th>Total Routes</th>
+        <th>Boardings</th>
+        <th>Alightings</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stops.each do |stop| %>
+      <tr>
+        <td><%= link_to "#{stop.id}", "../stops/#{stop.id}" %></td>
+        <td><%= stop.on_street %></td>
+        <td><%= stop.cross_street %></td>
+        <td><%= stop.routes_list %></td>
+        <td><%= stop.routes_total %></td>
+        <td><%= stop.boardings %></td>
+        <td><%= stop.alightings %></td>
+        <td><%= stop.location %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
