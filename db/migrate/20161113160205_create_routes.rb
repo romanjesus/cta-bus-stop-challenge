@@ -4,6 +4,7 @@ class CreateRoutes < ActiveRecord::Migration
 
       t.string :route_number
       t.string :name
+      t.integer :stops_total
 
       t.timestamps null: false
     end
