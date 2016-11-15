@@ -4,6 +4,7 @@ class StopsController < ApplicationController
     @routes = Route.all
     @longest_route = Routemapper.longest_route
     @stop_w_most_routes = Routemapper.stop_w_most_routes
+    @stops = Stop.all.limit(100)
   end
 
   def show
