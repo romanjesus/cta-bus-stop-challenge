@@ -2,12 +2,33 @@
   <h2 class="text-center"> Route <%= @route.route_number %>: <%= @route.name %></h2>
   <h4 class="text-center"><%= "Total stops: #{@route.num_of_stops}" %></h3>
 
-
-  <h3> Stops </h3>
-  <ul>
-    <% @route.stops.each do |stop| %>
-      <li>  <%= link_to "#{stop.full_name}", "../stops/#{stop.id}" %></li>
+  <table id ="all_stops">
+    <thead>
+      <tr>
+        <th>Stop ID</th>
+        <th>On Street</th>
+        <th>Cross Street</th>
+        <th>Routes List</th>
+        <th>Total Routes</th>
+        <th>Boardings</th>
+        <th>Alightings</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @route.stops.each do |stop| %>
+      <tr>
+        <td><%= link_to "#{stop.id}", "../stops/#{stop.id}" %></td>
+        <td><%= stop.on_street %></td>
+        <td><%= stop.cross_street %></td>
+        <td><%= stop.routes_list %></td>
+        <td><%= stop.routes_total %></td>
+        <td><%= stop.boardings %></td>
+        <td><%= stop.alightings %></td>
+        <td><%= stop.location %></td>
+      </tr>
     <% end %>
-  </ul>
+    </tbody>
+  </table>
 
 </div>
