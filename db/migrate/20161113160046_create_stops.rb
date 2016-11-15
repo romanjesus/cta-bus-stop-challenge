@@ -4,7 +4,7 @@ class CreateStops < ActiveRecord::Migration
 
       t.string :on_street
       t.string :cross_street
-      t.string :routes
+      t.string :routes_list
       t.integer :routes_total
       t.integer :boardings
       t.integer :alightings
