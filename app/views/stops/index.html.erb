@@ -43,7 +43,7 @@
     <tbody>
       <% @stops.each do |stop| %>
       <tr>
-        <td><%= stop.id %></td>
+        <td><%= link_to "#{stop.id}", "../stops/#{stop.id}" %></td>
         <td><%= stop.on_street %></td>
         <td><%= stop.cross_street %></td>
         <td><%= stop.routes_list %></td>
